@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06-JS中的数组</title>
+    <script type="text/javascript">
+        //JS中内置了一个对象Array
+        //创建数组,静态初始化
+        var myArray = [1,23,4,5,22,34];
+
+        //获取数组元素个数
+        alert(myArray.length);
+
+        //遍历
+        for(var i=0;i<myArray.length;i++) {
+            alert(myArray[i]);
+        }
+
+        //动态初始化
+        myArray = new Array(5);//动态分配5个空间,默认值undefined
+        //赋值,JS中数组类型不统一
+        myArray[0] = 1;
+        myArray[1] = true;
+        myArray[2] = "abc";
+
+        //遍历
+        for(var i=0;i<myArray.length;i++) {
+            alert(myArray[i]);
+        }
+
+        //数组中常用方法
+        var a = [1,"abc",false,3.0];
+        var str = a.join("-"); //以指定符号链接数组中每一个元素,最后返回一个字符串
+        alert(str);
+
+        a.reverse();//反转数组中的元素
+        for(var i=1;i<a.length;i++) {
+            alert(a[i]);
+        }
+
+        alert(a.pop());//将数组中最右边的元素删除
+        alert(a.length);//3
+
+        alert(a.push("xxx"));//向数组最右边添加一个元素
+
+        alert(a.toString());
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

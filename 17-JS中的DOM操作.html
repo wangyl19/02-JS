@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17-JS中的DOM操作</title>
+    <script type="text/javascript">
+        function addElt() {
+            //向div节点中追加一个字节点
+            //获取div节点
+            var div = document.getElementById("myDiv");
+            //创建font节点
+            var fontElement = document.createElement("font");
+            fontElement.innerHTML = "测试<br>";
+            fontElement.color = "red";
+            //将font节点追加到div中
+            div.appendChild(fontElement);
+            /**
+             * innerHTML和innerText
+             * innerHTML 插入一段html代码
+             * innerText 插入一段字符串,但该方法存在浏览器兼容问题
+             * textContent兼容firefox,不兼容IE
+             * innerText兼容IE,不兼容firefox
+             */
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="给div添加font标签" onclick="addElt()">
+<div id="myDiv">
+
+</div>
+</body>
+</html>

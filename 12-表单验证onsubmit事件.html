@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-表单验证</title>
+</head>
+<body>
+<!--表单验证的时候尽量不要在点击注册按钮的时候才验证,最好填写一个验证一个-->
+<!--我们表单通常采用失去焦点就验证信息-->
+<!--失去焦点的事件是:blur事件,onblur是事件句柄 -->
+<!--调用验证方法,将用户名传递给该方法:this.value-->
+<!--文本框获取焦点:focus,事件句柄,onfocus-->
+<!--表单提交事件:submit,事件句柄:onsubmit,这个事件句柄需要写在 form标签上面
+    <form onsubmit="return true;">提交表单
+    <form onsubmit="return false;">不提交表单
+-->
+<script type="text/javascript">
+   /* function checkUserName() {
+        var username = document.getElementsByName("username")[0].value;
+        alert(username);
+    }*/
+    var flag = false;
+    function checkUserName(username) {
+        var userMsg = document.getElementById("usernameErrorMsg");
+        //非空验证 什么都没填 == "";
+        if(username == "") {
+            userMsg.innerHTML = "<font color='red'>用户名不能为空</font>"
+            flag = false;
+            return;
+        }
+        //长度验证[6-14]
+        if(username.length<6 || username.length>14) {
+            userMsg.innerHTML = "<font color='red'>用户名长度必须在[6-14]之间</font>"
+            flag = false;
+            return;
+        }
+        userMsg.innerHTML = "";
+        flag = true;
+    }
+
+    function clearNameError() {
+        document.getElementById("usernameErrorMsg").innerHTML = "";
+    }
+
+    function checkAll() {
+       return flag;
+    }
+</script>
+<form action="http://www.baidu.com" name="userForm" method="get" onsubmit="return checkAll();">
+    用户名
+    <input type="text" name="username" onblur="checkUserName(this.value)" onfocus="clearNameError()">
+    <span id="usernameErrorMsg"></span>
+    <br>
+    <input type="submit" value="注册">
+
+</form>
+</body>
+</html>

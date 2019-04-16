@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>26-eval函数</title>
+    <script type="text/javascript">
+        //eval函数的作用:将普通字符串当作JS代码解释执行
+        window.eval("var i = 100;");
+
+        //以上程序等同于
+        //var i = 100;
+
+        alert(i);
+
+        /**
+         * java程序连接数据库之后,查询数据,然后拼接成一个json格式的字符串发送给浏览器
+         * 浏览器只是接收到一个普通json格式的字符串,然后在JS中使用eval函数,将json格式的
+         * 字符串转换成json对象
+         */
+        var javaSendStr = "var user = {\"usercode\":100,\"username\":\"张三\"};";
+        window.eval(javaSendStr);
+        alert(user.usercode + "," + user.username);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

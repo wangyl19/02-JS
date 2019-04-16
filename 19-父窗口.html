@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19-父窗口</title>
+    <script type="text/javascript">
+        //全局变量
+        var ename = "SMITH";
+        //访问全局变量
+        // alert("ename = "+ename);
+
+        //在JS中全局变量和局部变量都是window对象的属性
+        // alert("ename = "+this.ename);
+
+        //全局函数
+        function sayHello() {
+            alert("sayHello function execute!");
+        }
+        //调用函数
+        // sayHello();
+        // window.sayHello();
+        //注:window.可以省略
+
+        //全局变量
+        var empno = 7396;
+        //全局函数
+        function sum(a,b) {
+            return a+b;
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="打开子窗口" onclick="window.open('20-子窗口.html')"/>
+</body>
+</html>

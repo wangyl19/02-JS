@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-JS操作复选框全选全不选</title>
+    <script type="text/javascript">
+        function allSelect() {
+            var checkboxAllEle = document.getElementById("all");
+            var checkboxArr = document.getElementsByName("interest");
+            if(checkboxAllEle.checked) {
+                for(var i=0;i<checkboxArr.length;i++) {
+                    checkboxArr[i].checked = true;
+                    document.getElementsByTagName("span")[0].innerHTML = "取消全选";
+                }
+            } else {
+                for(var i=0;i<checkboxArr.length;i++) {
+                    checkboxArr[i].checked = false;
+                    document.getElementsByTagName("span")[0].innerHTML = "全选";
+                }
+            }
+        }
+        function allSelect1() {
+            var checkboxAllEle = document.getElementById("all");
+            var checkboxArr = document.getElementsByName("interest");
+            var countNum = 0;
+            for(var i=0;i<checkboxArr.length;i++) {
+                if(checkboxArr[i].checked) {
+                    countNum++;
+                }
+            }
+            if(countNum == checkboxArr.length) {
+                checkboxAllEle.checked = true;
+                document.getElementsByTagName("span")[0].innerHTML = "取消全选";
+            }else{
+                checkboxAllEle.checked = false;
+                document.getElementsByTagName("span")[0].innerHTML = "全选";
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="checkbox" id="all" onclick="allSelect()"><span>全选</span><br>
+运动<input type="checkbox" name="interest" value="sport" onclick="allSelect1()"><br>
+睡觉<input type="checkbox" name="interest" value="sleep" onclick="allSelect1()"><br>
+学习<input type="checkbox" name="interest" value="study" onclick="allSelect1()"><br>
+跑步<input type="checkbox" name="interest" value="run" onclick="allSelect1()"><br>
+</body>
+</html>

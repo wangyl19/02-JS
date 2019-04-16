@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>21-table动态增删</title>
+    <script type="text/javascript">
+        function addTr() {
+            //思路
+            //1.获取用户名
+            var username = document.getElementById("username").value;
+            if(username.trim() == "") {
+                return;
+            }
+            //2.获取表格对象
+            var tableObj = document.getElementsByTagName("table")[0];
+            //3.向表格对象末尾插入新的一行
+            var newRow = tableObj.insertRow();
+            newRow.id = new Date().getTime();
+            //4.在新的行上添加两个单元格
+            var newCell1 = newRow.insertCell();
+            var newCell2 = newRow.insertCell();
+            //5.设置两个单元格的内容
+            newCell1.innerHTML = username;
+            newCell2.innerHTML = '<input type="button" value="删除" onclick="delTr('+newRow.id+')"/>';
+        }
+
+        function delTr(id) {
+            if(window.confirm("亲,确定要删除嘛")) {
+                var index = document.getElementById(id).rowIndex;
+                //删除数据
+                document.getElementsByTagName("table")[0].deleteRow(index)
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="username">
+    <input type="button" value="新增" onclick="addTr()">
+    <hr>
+    <table border="1px" width="30%">
+        <tr>
+            <th>姓名</th>
+            <th>操作</th>
+        </tr>
+    </table>
+</body>
+</html>

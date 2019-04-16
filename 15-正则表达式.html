@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15-正则表达式</title>
+    <script type="text/javascript">
+        /*
+        * 1,正则表达式是一门独立的学科,与编程语言无关
+        * 2,在编程中使用正则表达式最主要是用来做字符串模式匹配
+        * 3,在正则表达式中规定了一些特殊的符号,每一个符号都有特殊含义.
+        * 4,常见正则表达式符号:
+        *   ^ 字符串开始
+        *   $ 字符串结束
+        *   \s 空白
+        *
+        *   +[1-N]   *[0-N]   ?[0|1]
+        *   {2,5}出现[2-5]次
+        *   {1,}出现至少1次
+        *
+        *   [0-9] 0-9的数字任意出现1个
+        *   [0-9a-zA-Z]{3,} 0-9a-zA-Z之间的字符至少出现3次
+        * 5,在JS中怎么创建正则表达式,正则表达式哪个方法最常用
+        *   创建正则表达式有两种方式
+        *      第一种[常用]:     var regexp = /正则表达式/flag;
+        *      第二种:           var regexp = new RegExp("正则表达式","flag")
+        *      注:flag可选值    i,g,m
+        *           i:忽略大小写
+        *           g:当前行所有数据
+        *           m:支持多行搜索
+        *       i,g,m可以合并使用
+        *   正则表达式对象中有一个很重要的方法,叫做test
+        *       语法格式:
+        *           var regexp = /正则表达式/;
+        *           var retValue = regexp.test(字符串);
+        *           retValue:true   字符串符合正则表达式
+        *           retValue:false  不符合正则表达式
+        * */
+        function checkEmail(email) {
+            var regexp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+            var ok = regexp.test(email);
+            var emailError = document.getElementById("emailError");
+            if(ok){
+                emailError.innerHTML = "";
+            }else{
+                emailError.innerHTML = "<font color='red'>邮箱格式错误!</font>"
+            }
+        }
+    </script>
+</head>
+<body>
+邮箱地址<input type="text" name="email" onblur="checkEmail(this.value)">
+<span id="emailError"></span>
+
+</body>
+</html>

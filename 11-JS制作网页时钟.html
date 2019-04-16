@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-JS制作网页时钟</title>
+    <script type="text/javascript">
+        function displayTime() {
+            document.getElementById("timeDiv").innerHTML = new Date().toLocaleString();
+        }
+
+        //每隔1s调用displayTime函数
+        function start() {
+            window.setInterval("displayTime()",1000);
+        }
+    </script>
+</head>
+<!--
+load事件
+onload事件句柄
+
+load事件什么时候发生?
+    -当整个HTML页面全部加载完毕之后,load事件发生.
+onload事件句柄需要编写到body标签中
+-->
+<body onload="start()">
+<div id="timeDiv"></div>
+</body>
+</html>

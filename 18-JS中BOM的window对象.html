@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18-JS中BOM的window对象</title>
+    <!--window代表整个浏览器窗口-->
+    <!--
+        前进:window.history.go(1);
+        后退:window.history.go(-1);
+             window.history.back();
+    -->
+    <script type="text/javascript">
+        function goBaidu() {
+            /*
+            * window.location是浏览器地址对象
+            * */
+            //window.location.href = "http://www.baidu.com";
+            //window.location = "http://www.baidu.com";
+
+            //DOM编程中document对象也可以完成发送请求
+            //document.location.href = "http://www.baidu.com";
+            //document.location = "http://www.baidu.com";
+
+            //window.open("http://www.baidu.com","_blank");
+            window.open("http://www.baidu.com");//默认就是在新窗口中打开
+        }
+    </script>
+</head>
+<body>
+<a href="http://www.baidu.com">百度</a>
+<input type="button" value="百度" onclick="goBaidu()">
+</body>
+</html>

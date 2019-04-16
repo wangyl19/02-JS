@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-JS中的函数</title>
+    <script type="text/javascript">
+        /*
+        * 关于JS中的函数
+        *   1,函数对应关键字为function
+        *   2,JS中函数的定义
+        *       function 函数名(形参列表) {
+        *           函数体由JS语句构成;
+        *       }
+        *       函数名 = function(形参列表) {
+        *           //返回值可以是任意类型或者不返回(弱类型)
+        *           //return 100;
+        *           //return false;
+        *           //return "abc";
+        *       }
+        *       function sum(a,b){}
+        *       以下都可以调用
+        *       sum(10,20);
+        *       sum("abc","def");
+        *       sum(2.0,3.0);
+        *       sum(3.6);//a为3.6,b为undefined
+        *       sum();//a,b都为undefined
+        *       JS函数没有重载机制,函数名不能重名
+        * */
+        window.alert("hello world!");
+
+        //这个方法不调用会执行吗?
+        //函数必须手动调用的时候才会执行
+        function sayHello() {
+            alert("hello world!");
+        }
+
+        //调用函数
+        sayHello();
+
+        function sum(a,b) {
+            return a+b;
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="salHello" onclick="sayHello()">
+<!--NaN 表示Not a Number-->
+<!--JS中什么情况下结果是NaN呢?
+    计算结果本应该返回一个数字,但是结果不是数字的时候,结果就是NaN
+-->
+<input type="button" value="sum" onclick="alert(sum())">
+</body>
+</html>

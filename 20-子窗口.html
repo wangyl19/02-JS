@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20-子窗口</title>
+    <script type="text/javascript">
+        function getParentWinEmpno() {
+            //window代表当前子窗口对象
+            //window.opener代表当前子窗口的开启人
+            var parentWin = window.opener;
+            alert(parentWin);
+            alert(parentWin.empno);
+            alert(parentWin.sum(2,3));
+            parentWin.sayHello();
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="获取父窗口的empno" onclick="getParentWinEmpno()"/>
+</body>
+</html>

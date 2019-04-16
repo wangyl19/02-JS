@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-JS的日期对象Date</title>
+    <script type="text/javascript">
+        //获取当前日期对象
+        var nowTime = new Date();
+        alert(nowTime); //Fri Apr 12 2019 15:42:27 GMT+0800 (中国标准时间)
+
+        //将系统时间转换成具有本地语言环境的时间
+        var localTimeStr = nowTime.toLocaleString();
+        alert(localTimeStr);//2019/4/12 下午3:45:58
+
+        //也可以获取日期的年月日,自定义格式
+        alert(nowTime.getYear());       //119 千年虫问题,这个方法已被废弃
+        alert(nowTime.getFullYear());   //2019 这个方法更通用,
+        alert(nowTime.getTime());//1555055329642
+    </script>
+</head>
+<body>
+
+</body>
+</html>

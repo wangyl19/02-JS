@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>22-select动态增加option</title>
+    <script type="text/javascript">
+        function addNewOption (){
+            //1.获取课程名
+            var coursename = document.getElementById("coursename").value;
+            //2.获取下拉列表对象
+            var selectObj = document.getElementById("courseSelect");
+            //3.创建option新节点对象
+            var optionObj = document.createElement("option");
+            optionObj.value = coursename;
+            optionObj.innerHTML = coursename;
+            //4.option新节点添加到下拉列表对象中
+            selectObj.appendChild(optionObj);
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="coursename">
+<input type="button" value="添加" onclick="addNewOption();">
+<hr>
+<select name="courseSelect" id="courseSelect">
+    <option value="">--请选择课程--</option>
+</select>
+</body>
+</html>

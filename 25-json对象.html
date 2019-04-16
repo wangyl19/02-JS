@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>25-json对象</title>
+    <script type="text/javascript">
+        //json:JavaScript Object Notation[JS对象标记]
+        //json对象使用{}创建,这种语法可以创建一种无类型的javascript对象
+        //json通常使用在语言之间进行数据交换的时候充当"数据交换格式"
+        //json是一种数据传送格式,是一套标准的简单的轻量级的数据传送格式
+        //任何一个编程语言都可以在后台拼接json格式的字符串发送给前端
+        var user = {
+            "usercode":110,
+            "username":"jackson",
+            "age":20
+        };
+
+        //访问对象中属性
+        alert(user.usercode);
+        alert(user.username);
+        alert(user.age);
+
+        /*
+            在JS中[]表示数组对象{}表示json对象
+         */
+
+        //尝试定义一个json对象,存储班级中所有学生的信息
+        //要求该对象描述:学生总数,每个学生的信息
+        //每个学生信息包括:学号,姓名
+        var stus = {
+            "total":5,
+            "data":[
+                {"sno":100,"sname":"zhangsan"},
+                {"sno":110,"sname":"lisi"},
+                {"sno":120,"sname":"wangwu"},
+                {"sno":130,"sname":"zhaoliu"}
+            ]
+        }
+        for (var i=0;i<stus.data.length;i++) {
+            var stu = stus.data[i];
+            alert(stu.sno);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

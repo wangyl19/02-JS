@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14-String类扩展trim函数</title>
+    <script type="text/javascript">
+         var s = "                   abc def            ";
+         //JS中String类有trim函数,但是存在浏览器兼容问题,不兼容IE7/8/9/10
+         //s = s.trim();
+         //alert("-->"+s+"<--")
+
+        //给String扩展一个通用的trim函数
+        String.prototype.trim = function() {
+            //\s表示一个空格字符,^开头,$结尾
+            return this.replace(/(^\s*)|(\s*)$/g,"");
+        }
+        //调用扩展之后通用的trim函数
+        alert(s.trim());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>23-鼠标经过和离开事件</title>
+    <script type="text/javascript">
+        function changeColor(color) {
+            var baidu = document.getElementsByTagName("a")[0];
+            //需要改元素的css样式
+            baidu.style.color = color;
+        }
+    </script>
+</head>
+<body>
+<!--
+mouseover:鼠标经过(onmouseover事件句柄)
+mouseout:鼠标离开(onmouseout事件句柄)
+-->
+<a style="cursor: pointer;text-decoration: underline;color:blue;"
+   onmouseover="changeColor('red');" onmouseout="changeColor('blue');">百度</a>
+</body>
+</html>

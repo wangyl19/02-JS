@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>24-菜单的展开与收起</title>
+    <style type="text/css">
+        ul{
+            list-style-type : none;
+        }
+        #cityList{
+            display:none;
+        }
+    </style>
+    <script type="text/javascript">
+        var hide = true;
+        function displayOrHide() {
+            if(hide) {//显示
+                document.getElementById("cityList").style.display = "block";
+                hide = false;
+            } else { //隐藏
+                document.getElementById("cityList").style.display = "none";
+                hide = true;
+            }
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li>
+        <a style="color:blue;cursor: pointer;" onclick="displayOrHide()">中国</a>
+        <ul id="cityList">
+            <li>北京</li>
+            <li>天津</li>
+            <li>上海</li>
+        </ul>
+    </li>
+    <li>美国</li>
+    <li>日本</li>
+</ul>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<a href="javascript:void(0)" onclick="alert('')">只执行一段JS代码,不进行页面跳转,并且保留超链接样式</a>
+</body>
+</html>

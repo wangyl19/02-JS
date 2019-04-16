@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16-change事件</title>
+    <script type="text/javascript">
+        function getSelectValue(value) {
+            alert(value);
+        }
+    </script>
+</head>
+<body>
+<!--
+change事件是在什么时候发生的
+    下拉列表中选项发生改变的时候,change事件发生
+    此时注册在onchange事件句柄后的JS代码会自动执行
+-->
+<select name="course" onchange="getSelectValue(this.value)">
+    <!--this.value:将当前被选中的value传递过来-->
+    <option value="">--请选择课程--</option>
+    <option value="java">JAVA</option>
+    <option value="javascript">JAVASCRIPT</option>
+    <option value="mysql">MYSQL</option>
+    <option value="c++">C++</option>
+</select>
+</body>
+</html>

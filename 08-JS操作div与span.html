@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08-JS操作div与span</title>
+    <script type="text/javascript">
+        function showValue(a) {
+            if(a == 1) {
+                //为div赋值
+                var divEle = document.getElementById("div");
+                divEle.innerHTML = "<font color='red'>div元素中内容</font>"
+            } else if(a == 2) {
+                //为span赋值
+                var spanEle = document.getElementById("span");
+                spanEle.innerHTML = "<font color='red'>span元素中内容</font>"
+            }
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" value="设值div" onclick="showValue(1)">
+<div id="div"></div>
+<input type="button" value="设值div" onclick="showValue(2)">
+<span id="span"></span>
+</body>
+</html>

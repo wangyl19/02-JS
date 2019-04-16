@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-表单验证forms</title>
+</head>
+<body>
+<!--
+  document.forms["userForm"].action = "http://www.baidu.com";
+  document.forms["userForm"].method = "get";
+  document.forms["userForm"].submit();//提交name="userForm"的表单
+-->
+<script type="text/javascript">
+
+    function checkUserName(username) {
+        var userMsg = document.getElementById("usernameErrorMsg");
+        //非空验证 什么都没填 == "";
+        if(username == "") {
+            userMsg.innerHTML = "<font color='red'>用户名不能为空</font>"
+            return false;
+        }
+        //长度验证[6-14]
+        if(username.length<6 || username.length>14) {
+            userMsg.innerHTML = "<font color='red'>用户名长度必须在[6-14]之间</font>"
+            return false;
+        }
+        userMsg.innerHTML = "";
+        return true;
+    }
+
+    function clearNameError() {
+        document.getElementById("usernameErrorMsg").innerHTML = "";
+    }
+
+    function checkAll() {
+        var username = document.getElementById("username").value;
+        var flag = checkUserName(username);
+        if(flag){
+            document.forms["userForm"].action = "http://www.baidu.com";
+            document.forms["userForm"].method = "get";
+            document.forms["userForm"].submit();
+        }
+    }
+</script>
+<form name="userForm">
+    用户名
+    <input type="text" id="username" name="username" onblur="checkUserName(this.value)" onfocus="clearNameError()">
+    <span id="usernameErrorMsg"></span>
+    <br>
+    <input type="button" onclick="checkAll()" value="注册">
+
+</form>
+</body>
+</html>

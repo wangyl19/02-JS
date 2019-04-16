@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-在HTML中嵌入JS的第一种方式</title>
+</head>
+<body>
+<!--需求:当用户点击按钮时,执行一段JS代码-->
+<!--JS是一种基于事件驱动的编程语言-->
+<!--点击按钮 是一个鼠标单击事件,这个事件在JS中被称为click事件-->
+<!--每一个JS事件都会对应一个事件句柄,事件句柄的名称是:on+事件名-->
+<!--例如:click是鼠标单击事件,onclick是鼠标单击事件句柄-->
+<!--程序员可以在事件句柄后面注册JS代码,当这个事件发生时,所注册的JS代码就会执行-->
+<!--当事件发生时,所注册的JS代码会被浏览器调用,自动执行-->
+<!--JS有三部分组成,其中一部分是BOM(Browser Object Model)-->
+<!--window是JS的一个内置对象,代表整个浏览器窗口,属于BOM的一员-->
+<!--window有一个方法alert,这个方法可以弹出消息框-->
+<!--JS的字符串可以使用双引号与单引号-->
+<!--window.alert中的window可以省略-->
+<input type="button" value="亲,点击我!"
+       onclick="window.alert('ok');window.alert('点我干嘛?');alert('关闭');">
+</body>
+</html>

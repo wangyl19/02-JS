@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07-JS获取文本框的value</title>
+    <script type="text/javascript">
+
+        function getText(){
+            //DOM编程
+            //思路:第一步先获取整个文本框节点,第二步获取文本框节点的value
+            //通过id获取该节点
+            var inputElement = document.getElementById("textId");
+            //alert(inputElement);//[object HTMLInputElement]
+
+            //input文本框有value属性,所以可以使用这种语法:元素对象.value
+            var username = inputElement.value;
+            alert(username);
+
+            inputElement.value = "lisi";
+        }
+
+        function getAllCheckbox() {
+            //DOM编程
+            var checkboxArray = document.getElementsByName("interest");
+            for(var i=0;i<checkboxArray.length;i++) {
+                alert(checkboxArray[i].value);
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="textId">
+<input type="button" value="提交" onclick="getText()">
+<br>
+爱好:
+运动<input type="checkbox" name="interest" value="sport">
+睡觉<input type="checkbox" name="interest" value="sleep">
+学习<input type="checkbox" name="interest" value="study">
+跑步<input type="checkbox" name="interest" value="run">
+
+<input type="button" value="提交" onclick="getAllCheckbox()">
+</body>
+</html>

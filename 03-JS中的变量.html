@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-JS中的变量</title>
+    <script type="text/javascript">
+        /*
+        * 1.什么是变量?
+        *   -变量是内存中存储数据的最基本单元
+        *
+        * 2.变量怎么声明
+        *   -JAVA是一种强类型的语言:JAVA语言有编译阶段,在编译阶段就确定了变量的数据类型
+        *         强类型的语言 变量的数据类型一旦确定不可改变
+        *   -JS是一种弱类型的语言:JS以普通文本保存,没有编译期,直接运行
+        *         弱类型的语言 变量的数据类型可以随意改变
+        *   -因此JS中的变量统一使用关键字 var 声明
+        * 3.变量怎么赋值:变量名 = 值;
+        *   -JS中变量若没有赋值,系统默认值为undefined
+        *
+        * 4.全局变量,局部变量
+        *   JS也遵循就近原则
+        *   全局变量作用域是整个JS程序
+        *   局部变量作用域只作用于某个函数
+        * */
+        //声明变量没有赋值
+        var ename;
+        alert(ename);
+
+        //赋值
+        ename = "SMITH";
+        alert(ename);
+
+        //可以赋其他类型值
+        ename = 100;
+        alert(ename+1);
+
+        ename = false;
+        alert(ename?"abc":"def");
+
+        ename = 3.2;
+        alert(ename+1);
+
+        //一次声明多个变量
+        //变量a和 变量b都是undefined
+        //变量c是300
+        var a,b,c = 300;
+        alert(a);
+        alert(b);
+        alert(c);
+
+        //死循环
+        while(true) {
+            alert("来吧,点吧")
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

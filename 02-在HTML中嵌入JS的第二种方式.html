@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-在HTML中嵌入JS的第二种方式</title>
+    <!--引入外部的JS文件-->
+    <!--<script type="text/javascript" src="1.js"/>-->
+    <!--独立的脚本块,text/javascript代表脚本块中为JS代码-->
+    <script type="text/javascript">
+        //script标签可以出现在HTML页面中的任何位置
+        //在整个HTML页面加载的时候,自上而下的顺序依次解释执行
+        //而且alert方法具有阻塞作用,当用户点击确定之后,alert语句才算执行完成
+        //所以这一行代码执行的时候body中的数据是无法加载的,用户看不到
+        window.alert("Hello,World");
+
+        //省略window
+        alert("你好");
+    </script>
+</head>
+<body>
+<a href="http://www.baidu.com">百度</a>
+</body>
+<script type="text/javascript">
+    alert('张三');
+</script>
+</html>
+<script type="text/javascript">
+    alert('李四');
+</script>
